@@ -1,16 +1,17 @@
----
 - name: Setup
- hosts: all
- sudo: true
- tasks:
- - name: Add ansible user
- user:
-  name: ansible
-  state: present
-  generate_ssh_keys: yes
- - name: Ensure that NTP is available
- apt:
-  name:ntp
- service:
-  name: ntp
-  state: started
+  hosts: all
+  sudo: true
+  tasks:
+  - name: Add ansible user
+    user:
+      name: ansible
+      state: present
+      generate_ssh_keys: true
+  - name: Ensure that NTP is available
+    apt:
+      name: ntp
+      state: present
+  - name: Ensure that NTP service is started
+    service:
+      name: ntp
+      state: started
