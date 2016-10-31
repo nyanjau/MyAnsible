@@ -6,7 +6,7 @@
     user:
       name: ansible
       state: present
-      generate_ssh_keys: true
+      generate_ssh_keys: yes
   - name: Ensure that NTP is available
     apt:
       name: ntp
