@@ -2,4 +2,5 @@
 - name: Setup
   hosts: all
   become: true
-  tasks:
+  roles:
+  - name: role-ansible
