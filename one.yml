@@ -3,16 +3,3 @@
   hosts: all
   become: true
   tasks:
-  - name: Add ansible user
-    user:
-      name: ansible
-      state: present
-      generate_ssh_key: yes
-  - name: Ensure that NTP is available
-    apt:
-      name: ntp
-      state: present
-  - name: Ensure that NTP service is started
-    service:
-      name: ntp
-      state: started
