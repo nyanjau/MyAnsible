@@ -24,8 +24,7 @@ install:
 script:
   # Basic role syntax check
   - echo "starting test"
-  - cd /role/local-ansible/
-  - ansible-playbook -i inventory --syntax-check
-  - ansible-playbook tests/test.yml -i tests/inventory
+  - cd /roles/local-ansible/
+  - ansible-playbook -i roles/role-ansible/tests/inventory --syntax-check
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
